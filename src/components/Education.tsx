@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { GraduationCap, MapPin, BookOpen, School } from "lucide-react"
+import { MapPin } from "lucide-react"
 
 interface Education {
   degree: string
@@ -34,7 +34,7 @@ const education: Education[] = [
     institution: "Divisional Public School",
     location: "Faisalabad",
     icon: '🏫',
-},
+  },
 ]
 
 const Education = () => {
@@ -55,7 +55,8 @@ const Education = () => {
         />
       </div>
 
-      <div className="relative z-10 text-center py-16 sm:py-24 px-4 sm:px-6 lg:px-8 mx-20">
+      {/* Main content container */}
+      <div className="relative z-10 text-center py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <motion.div 
@@ -88,24 +89,24 @@ const Education = () => {
             >
               
               {/* Content */}
-              <div className="flex items-start gap-5">
+              <div className="flex items-start gap-4 sm:gap-5">
                 
                 {/* Icon */}
-                <div className={`shrink-0 w-16 h-16 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 text-2xl bg-[#3EE0CF]/20`}>
+                <div className="shrink-0 w-12 h-12 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 text-xl sm:text-2xl bg-[#3EE0CF]/20">
                   {edu.icon}
                 </div>
 
                 {/* Text Content */}
                 <div className="flex-1 text-left">
-                  <h3 className="text-white text-xl sm:text-2xl font-bold mb-2 group-hover:text-[#3EE0CF] transition-colors">
+                  <h3 className="text-white text-lg sm:text-xl font-bold mb-2 group-hover:text-[#3EE0CF] break-words transition-colors">
                     {edu.degree}
                   </h3>
                   
-                  <p className="text-[#3EE0CF] text-base sm:text-lg font-semibold mb-3">
+                  <p className="text-[#3EE0CF] text-sm sm:text-base font-semibold mb-3 break-words">
                     {edu.institution}
                   </p>
 
-                  <div className="flex items-center gap-2 text-gray-400 text-sm">
+                  <div className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm">
                     <MapPin className="w-4 h-4" />
                     <span>{edu.location}</span>
                   </div>
